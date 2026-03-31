@@ -233,8 +233,8 @@ export default function HomePage() {
               style={{ fontFamily: "'DM Serif Display', Georgia, serif", lineHeight: '0.95', letterSpacing: '-0.04em' }}
               className="text-white text-[48px] md:text-[72px] lg:text-[88px] mb-8"
             >
-              AI that collects your rent,{' '}
-              <span className="text-[#858484]">so you don&apos;t have to</span>
+              We automated an entire real estate company.{' '}
+              <span className="text-[#858484]">Yours is next.</span>
             </h1>
 
             <p className="text-[17px] md:text-[19px] text-white/60 leading-[1.6] max-w-[40rem] mx-auto mb-10" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
