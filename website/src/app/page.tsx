@@ -406,6 +406,84 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── WHATSAPP DEMOS — See the agents in action ── */}
+      <section className="py-[120px] px-8 bg-[#0E0D0C]">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-[13px] text-[#858484] tracking-[0.1em] uppercase mb-5" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>
+              See it in action
+            </p>
+            <h2
+              style={{ fontFamily: "'DM Serif Display', Georgia, serif", lineHeight: '1.1', letterSpacing: '-0.02em' }}
+              className="text-[40px] md:text-[48px] mb-4"
+            >
+              <span className="text-[#FCFCFC]">Real conversations</span>{' '}
+              <span className="text-[#858484]">with AI agents</span>
+            </h2>
+            <p className="text-[16px] text-[#858484] leading-[1.7] max-w-[520px] mx-auto" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+              Your tenants and clients interact with AI agents via WhatsApp — just like texting a real person.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8">
+            {[
+              {
+                src: '/videos/housing-scraper.mp4',
+                title: 'Property Finder',
+                desc: 'Scrapes listings 24/7 and sends matches that fit your filters — price, zone, size, bedrooms.',
+              },
+              {
+                src: '/videos/payment-reminder.mp4',
+                title: 'Payment Agent',
+                desc: 'Reminds tenants before due date, sends payment options, and confirms receipt automatically.',
+              },
+              {
+                src: '/videos/data-assistant.mp4',
+                title: 'AI Assistant',
+                desc: 'Tenants ask questions about their account. The AI responds with real data — balances, fees, history.',
+              },
+            ].map((demo) => (
+              <div key={demo.title} className="flex flex-col items-center">
+                {/* Phone video */}
+                <div
+                  style={{
+                    width: 260,
+                    height: 520,
+                    borderRadius: 32,
+                    overflow: 'hidden',
+                    background: '#000',
+                    padding: 6,
+                    boxShadow: '0 25px 60px rgba(0,0,0,0.5)',
+                  }}
+                >
+                  <div style={{ width: '100%', height: '100%', borderRadius: 26, overflow: 'hidden' }}>
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    >
+                      <source src={demo.src} type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+
+                {/* Label */}
+                <div className="mt-6 text-center">
+                  <h3 className="text-[18px] text-[#FCFCFC] mb-2" style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}>
+                    {demo.title}
+                  </h3>
+                  <p className="text-[13px] text-[#858484] leading-[1.6] max-w-[240px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+                    {demo.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Video divider ──────────────────────────── */}
       <section className="px-8 py-4">
         <div className="max-w-[1100px] mx-auto rounded-2xl overflow-hidden relative aspect-[3/1]">
