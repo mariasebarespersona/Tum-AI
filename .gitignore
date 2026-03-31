@@ -6,3 +6,7 @@ test-results/
 *.log
 .DS_Store
 .agents/
+# Video temp files
+*.jpg
+dashboard_html/
+skills-lock.json
