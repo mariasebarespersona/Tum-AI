@@ -22,17 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Marketing pages — fully override dark body */
-body:has(.marketing-layout) {
-  background: #FCFCFC !important;
-  color: #0E0D0C !important;
-}
-
-.marketing-layout * {
-  /* Reset any inherited dark theme colors */
-  border-color: inherit;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -121,33 +110,3 @@ body:has(.marketing-layout) {
   animation: fadeIn 0.15s ease-out;
 }
 
-/* Marketing pages — override dark body styles */
-.marketing-layout {
-  background: #ffffff;
-  color: #0f172a;
-}
-
-.marketing-layout ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-}
-
-.marketing-layout ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Floating card animations for hero */
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-@keyframes floatMedium {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-18px); }
-}
-@keyframes floatFast {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-.animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
-.animate-float-medium { animation: floatMedium 5s ease-in-out infinite 0.5s; }
-.animate-float-fast { animation: floatFast 4s ease-in-out infinite 1s; }
