@@ -425,7 +425,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-6">
             {[
               {
                 src: '/videos/housing-scraper.mp4',
@@ -444,29 +444,27 @@ export default function HomePage() {
               },
             ].map((demo) => (
               <div key={demo.title} className="flex flex-col items-center">
-                {/* Phone video */}
+                {/* Video in rounded container — no phone frame, just the chat */}
                 <div
                   style={{
-                    width: 260,
-                    height: 520,
-                    borderRadius: 32,
+                    width: '100%',
+                    maxWidth: 340,
+                    aspectRatio: '9 / 16',
+                    borderRadius: 24,
                     overflow: 'hidden',
-                    background: '#000',
-                    padding: 6,
-                    boxShadow: '0 25px 60px rgba(0,0,0,0.5)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
                   }}
                 >
-                  <div style={{ width: '100%', height: '100%', borderRadius: 26, overflow: 'hidden' }}>
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    >
-                      <source src={demo.src} type="video/mp4" />
-                    </video>
-                  </div>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  >
+                    <source src={demo.src} type="video/mp4" />
+                  </video>
                 </div>
 
                 {/* Label */}
@@ -474,7 +472,7 @@ export default function HomePage() {
                   <h3 className="text-[18px] text-[#FCFCFC] mb-2" style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}>
                     {demo.title}
                   </h3>
-                  <p className="text-[13px] text-[#858484] leading-[1.6] max-w-[240px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+                  <p className="text-[13px] text-[#858484] leading-[1.6] max-w-[280px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
                     {demo.desc}
                   </p>
                 </div>
