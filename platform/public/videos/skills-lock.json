@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "videoagent-video-studio": {
+      "source": "pexoai/pexo-skills",
+      "sourceType": "github",
+      "computedHash": "6b680136146f3776e5706a066440432456b2dcf27e674ac6650aedc00ceca940"
+    }
+  }
+}

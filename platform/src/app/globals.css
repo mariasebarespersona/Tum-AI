@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #161618;
+  --foreground: #ededef;
+  --surface: #1e1e21;
+  --surface-2: #26262a;
+  --surface-3: #2e2e33;
+  --border: #2e2e33;
+  --border-hover: #3e3e44;
+  --muted: #8b8b8f;
+  --accent: #6366f1;
+  --accent-hover: #7c7ff7;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Marketing pages — fully override dark body */
+body:has(.marketing-layout) {
+  background: #FCFCFC !important;
+  color: #0E0D0C !important;
+}
+
+.marketing-layout * {
+  /* Reset any inherited dark theme colors */
+  border-color: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* React Flow overrides */
+.react-flow__background {
+  background-color: var(--background) !important;
+}
+
+.react-flow__minimap {
+  background-color: var(--surface) !important;
+  border-radius: 8px;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.react-flow__controls {
+  border-radius: 8px;
+  border: 1px solid var(--border) !important;
+  background: var(--surface) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden;
+}
+
+.react-flow__controls button {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+  fill: var(--muted) !important;
+  transition: all 0.15s ease;
+}
+
+.react-flow__controls button:hover {
+  background: var(--surface-2) !important;
+  color: var(--foreground) !important;
+  fill: var(--foreground) !important;
+}
+
+.react-flow__edge-path {
+  stroke-width: 1.5 !important;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from { stroke-dashoffset: 10; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Panel animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.2s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-out;
+}
+
+/* Marketing pages — override dark body styles */
+.marketing-layout {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.marketing-layout ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.marketing-layout ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Floating card animations for hero */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floatFast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+.animate-float-medium { animation: floatMedium 5s ease-in-out infinite 0.5s; }
+.animate-float-fast { animation: floatFast 4s ease-in-out infinite 1s; }

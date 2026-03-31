@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Email Scheduler Configuration",
+  "type": "object",
+  "required": ["EMAIL_PROVIDER", "EMAIL_FROM", "EMAIL_FROM_NAME", "SCHEDULE_CRON"],
+  "properties": {
+    "EMAIL_PROVIDER": {
+      "type": "string",
+      "enum": ["resend", "sendgrid", "ses"],
+      "description": "Email delivery provider"
+    },
+    "EMAIL_FROM": {
+      "type": "string",
+      "format": "email",
+      "description": "Sender email address"
+    },
+    "EMAIL_FROM_NAME": {
+      "type": "string",
+      "description": "Sender display name"
+    },
+    "SCHEDULE_CRON": {
+      "type": "string",
+      "pattern": "^[\\d\\*\\/\\-\\,]+\\s+[\\d\\*\\/\\-\\,]+\\s+[\\d\\*\\/\\-\\,]+\\s+[\\d\\*\\/\\-\\,]+\\s+[\\d\\*\\/\\-\\,]+$",
+      "description": "Cron expression for queue processing frequency"
+    },
+    "MAX_RETRIES": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 3,
+      "description": "Maximum retry attempts per email"
+    },
+    "BATCH_SIZE": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 500,
+      "default": 50,
+      "description": "Emails processed per batch"
+    },
+    "TIMEZONE": {
+      "type": "string",
+      "default": "UTC",
+      "description": "Timezone for scheduling (e.g., US/Central)"
+    },
+    "TEMPLATES_DIR": {
+      "type": "string",
+      "default": "./templates",
+      "description": "Directory containing HTML email templates"
+    }
+  }
+}
